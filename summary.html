@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadisa Norozi - Full Stack Developer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #4a90e2, #50c878);
+            color: white;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        header p.location {
+            font-size: 1.1em;
+            margin: 5px 0 15px;
+            opacity: 0.9;
+        }
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .socials a {
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 50px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .socials a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        .summary {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .summary p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            color: #555;
+        }
+        section {
+            padding: 20px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #4a90e2;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px;
+        }
+        .contact ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .contact li {
+            background: #f0f4f8;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        .contact li:hover {
+            transform: translateY(-3px);
+        }
+        .experience .job, .projects .project {
+            margin-bottom: 25px;
+            background: #f9fbfc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+        .experience .job:hover, .projects .project:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .experience h3, .projects h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin: 0 0 5px;
+        }
+        .experience p.date, .projects p.role {
+            font-style: italic;
+            color: #777;
+            margin: 0 0 10px;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .skill-category {
+            background: #f9fbfc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .skill-category h3 {
+            font-size: 1.3em;
+            color: #50c878;
+            margin-bottom: 10px;
+        }
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skill-category li {
+            background: #e6f4ea;
+            margin: 5px 0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .certifications ul, .languages ul {
+            list-style: none;
+            padding: 0;
+        }
+        .certifications li, .languages li {
+            background: #f0f4f8;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .education {
+            text-align: center;
+        }
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #357abd;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hadisa Norozi</h1>
+            <p class="location">Herat, Afghanistan (Open to Relocate)</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/hadisa-norozi" target="_blank">LinkedIn</a>
+                <a href="https://github.com/hadisa-norozi" target="_blank">GitHub</a>
+            </div>
+        </header>
+        <div class="summary">
+            <p>Results-driven Full Stack Developer and Full Stack Engineer with 8+ years of experience building scalable web applications and enterprise solutions. Proficient in JavaScript, TypeScript, React, Next.js, Go, Node.js, and microservices/micro-frontend architectures. Expertise spans UI/UX design, back-end development, and DevOps practices. Proven track record of significantly improving performance (e.g., 30-40% faster load times), scalability (40% improvement), and productivity (25% increase). Adept at collaborating with international teams to deliver high-quality, maintainable software.</p>
+        </div>
+        <section class="contact">
+            <h2>Contact Details</h2>
+            <ul>
+                <li>📧 hadisa.norozi@gmail.com</li>
+                <li>📞 +93 78 482 9137</li>
+            </ul>
+        </section>
+        <section class="experience">
+            <h2>Work Experience</h2>
+            <div class="job">
+                <h3>Self-Employed - Taskly Web App</h3>
+                <p class="date">September 2024 – Present</p>
+                <ul>
+                    <li>Built a full-featured Microsoft Shifts clone for comprehensive team scheduling and workforce management, enabling efficient shift creation, an open shift pool, easy swaps, and streamlined time-off requests.</li>
+                    <li>Designed and implemented a robust microservices architecture with GraphQL Mesh to unify APIs across various services, ensuring high scalability and maintainability.</li>
+                    <li>Developed a responsive and intuitive UI using React (Vite) and Tailwind CSS, providing a clean user experience and improving team productivity.</li>
+                    <li>Independently developed, deployed, and maintained the full-stack application, consistently optimizing performance, scalability, and user experience through iterative improvements.</li>
+                </ul>
+                <p>Tech Skills: Go, React (Vite), GraphQL, PostgreSQL, Basic DevOps, Microservices</p>
+            </div>
+            <div class="job">
+                <h3>Optimus Company - Full Stack Developer</h3>
+                <p class="date">Oslo, Norway (Remote) - February 2021 – September 2024</p>
+                <ul>
+                    <li>Designed and developed scalable web apps (website editor, Invoice Management App) using React, Go, GraphQL, REST API, PostgreSQL, and microservices, improving scalability by 40%.</li>
+                    <li>Led micro-frontend architecture implementation, enabling independent deployment of frontend modules and improving team collaboration.</li>
+                    <li>Reduced page load times by 30% using Vite and Next.js, enhancing user experience.</li>
+                </ul>
+                <p>Tech Skills: Go, Node.js, Next.js, React, GraphQL, REST API, PostgreSQL, MongoDB, Basic DevOps, Complex UI Interactions</p>
+            </div>
+            <div class="job">
+                <h3>Checkad Company - Web Developer, SEO</h3>
+                <p class="date">Herat, Afghanistan - June 2019 – August 2020</p>
+                <ul>
+                    <li>Developed and maintained web apps using React, JavaScript, and MySQL, managing full development lifecycle.</li>
+                    <li>Boosted SEO efforts, significantly enhancing website visibility and search engine rankings.</li>
+                    <li>Migrated WordPress to React Vite, reducing load times by 40%.</li>
+                    <li>Refactored API calls, reducing load times by 30%.</li>
+                </ul>
+                <p>Tech Skills: React, MySQL, Bootstrap, CSS, AWS, Node.js, REST API</p>
+            </div>
+            <div class="job">
+                <h3>Pomtech Company - Java & JavaScript Developer</h3>
+                <p class="date">Herat, Afghanistan - January 2014 – April 2019</p>
+                <ul>
+                    <li>Led an ERP System using Java and React Native, automating sales, inventory, and accounting processes, reducing load times by 30%, and mentoring the team.</li>
+                    <li>Developed code, resolved technical challenges, and streamlined workflows, increasing productivity by 25%.</li>
+                </ul>
+                <p>Tech Skills: Java, React Native, MySQL, JavaScript, React</p>
+            </div>
+        </section>
+        <section class="projects">
+            <h2>Key Projects</h2>
+            <div class="project">
+                <h3>Microsoft Shifts Clone - Taskly App (2025)</h3>
+                <p class="role">Role: Full Stack Developer</p>
+                <p>Summary: This project is a comprehensive team scheduling and workforce management application, designed to replicate the functionality of Microsoft Shifts.</p>
+                <p>Tasks & Impacts: I independently developed the entire full-stack application, implementing features like shift creation, an open shift pool for unassigned shifts, shift swaps, and time-off request management. My efforts resulted in a highly scalable and user-friendly platform with a focus on intuitive UI/UX.</p>
+                <p>Tech Stack: React, Go, GraphQL, PostgreSQL, Microservices</p>
+                <p>Links: <a href="https://tasklysite.vercel.app/" target="_blank">tasklysite.vercel.app</a>, <a href="https://taskly-app-theta.vercel.app/sign-in" target="_blank">taskly-app-theta.vercel.app/sign-in</a></p>
+            </div>
+            <div class="project">
+                <h3>Website Editor App (2024)</h3>
+                <p class="role">Role: Full Stack Developer</p>
+                <p>Summary: A dynamic web application designed for easily editing and customizing websites.</p>
+                <p>Tasks & Impacts: As a Full Stack Developer, I built this application focusing on a highly intuitive user interface and robust backend integration. The project aimed to provide users with a seamless experience for managing web content.</p>
+                <p>Tech Stack: React, Go, GraphQL, Next.js, Tailwind</p>
+                <p>Links: <a href="https://friendlysquadwebsite5.vercel.app/en/" target="_blank">friendlysquadwebsite5.vercel.app/en/</a>, <a href="https://booking-site-murex.vercel.app/" target="_blank">booking-site-murex.vercel.app</a>, <a href="https://booking-site-dosx.vercel.app/#" target="_blank">booking-site-dosx.vercel.app/#</a></p>
+            </div>
+            <div class="project">
+                <h3>Invoice Management App (2022)</h3>
+                <p class="role">Role: Full Stack Developer</p>
+                <p>Summary: A scalable application designed to streamline invoice creation, tracking, and management.</p>
+                <p>Tasks & Impacts: I developed this application focusing on a RESTful API for efficient data handling and a seamless user experience. The project successfully created a robust system for managing invoicing processes, enhancing operational efficiency.</p>
+                <p>Tech Stack: Node.js, RESTful API, Next.js, Tailwind</p>
+                <p>Links: <a href="https://invoice-managment-seven.vercel.app/" target="_blank">invoice-managment-seven.vercel.app</a></p>
+            </div>
+        </section>
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                    <li>GoLang</li>
+                    <li>Node.js</li>
+                    <li>Java</li>
+                    <li>GraphQL</li>
+                    <li>REST API</li>
+                    <li>Gin</li>
+                    <li>Express</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>Next.js</li>
+                    <li>React.js</li>
+                    <li>React Native</li>
+                    <li>Babel</li>
+                    <li>Webpack</li>
+                    <li>Jest</li>
+                    <li>Tailwind</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <ul>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>MongoDB</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>DevOps Tools</h3>
+                <ul>
+                    <li>GitLab</li>
+                    <li>Bitbucket</li>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>AWS</li>
+                    <li>NPM</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Familiar Skills</h3>
+                <ul>
+                    <li>Kubernetes</li>
+                    <li>Jest</li>
+                </ul>
+            </div>
+        </section>
+        <section class="soft-skills">
+            <h2>Soft Skills</h2>
+            <ul>
+                <li>Communication</li>
+                <li>Leadership & Mentorship</li>
+                <li>Teamwork</li>
+                <li>Time Management</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
+        <section class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>EF SET Certificate (2023)</li>
+                <li>Imagine’s Job Booster (2025)</li>
+            </ul>
+        </section>
+        <section class="languages">
+            <h2>Languages</h2>
+            <ul>
+                <li>English (B2)</li>
+                <li>Farsi (Native)</li>
+            </ul>
+        </section>
+        <section class="education">
+            <h2>Education</h2>
+            <p>Herat University</p>
+            <p>Bachelor of Computer Science</p>
+            <p>Afghanistan, Herat, 2010 - 2013</p>
+        </section>
+    </div>
+</body>
+</html>
