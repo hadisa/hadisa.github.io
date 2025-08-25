@@ -1,0 +1,49 @@
+1:"$Sreact.fragment"
+3:I[9304,["177","static/chunks/app/layout-67f1f1e71feb51cc.js"],"ThemeProvider"]
+4:"$Sreact.suspense"
+5:I[8521,["177","static/chunks/app/layout-67f1f1e71feb51cc.js"],"default"]
+6:I[1386,["177","static/chunks/app/layout-67f1f1e71feb51cc.js"],"default"]
+7:I[7555,[],""]
+8:I[1295,[],""]
+9:I[894,[],"ClientPageRoot"]
+a:I[5130,["600","static/chunks/600-21f7f24e5f74d21d.js","874","static/chunks/874-6aa1d9ec21380397.js","964","static/chunks/964-c8b7c42def8657d2.js","369","static/chunks/369-de45dc79e8f72f4f.js","49","static/chunks/49-deb9df52f19e2ab4.js","757","static/chunks/757-6c853732982f7e55.js","993","static/chunks/993-49677f19d2b5ca85.js","500","static/chunks/app/project/page-fa88ba8cb2903d6b.js"],"default"]
+d:I[9665,[],"OutletBoundary"]
+10:I[9665,[],"ViewportBoundary"]
+12:I[9665,[],"MetadataBoundary"]
+14:I[6614,[],""]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/b2a5577a8d014406.css","style"]
+:HL["/_next/static/css/931b179cff3131dc.css","style"]
+2:T48e,
+              // Remove bis_skin_checked attributes before React hydration
+              (function() {
+                if (typeof window !== 'undefined') {
+                  // Run after DOM is fully loaded but before React hydration
+                  const observer = new MutationObserver(function() {
+                    document.querySelectorAll('[bis_skin_checked]').forEach(el => {
+                      el.removeAttribute('bis_skin_checked');
+                    });
+                  });
+                  
+                  // Start observing the document with the configured parameters
+                  observer.observe(document.documentElement, {
+                    attributes: true,
+                    childList: true,
+                    subtree: true
+                  });
+                  
+                  // Also run once on load
+                  document.addEventListener('DOMContentLoaded', () => {
+                    document.querySelectorAll('[bis_skin_checked]').forEach(el => {
+                      el.removeAttribute('bis_skin_checked');
+                    });
+                  });
+                }
+              })();
+            0:{"P":null,"b":"i-jjl19ROp9Xps85F63SV","p":"","c":["","project"],"i":false,"f":[[["",{"children":["project",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b2a5577a8d014406.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/931b179cff3131dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}]}],["$","body",null,{"className":"__className_e8ce0c min-h-screen text-foreground overflow-x-hidden relative transition-colors duration-500","children":["$","$L3",null,{"defaultTheme":"dark","children":[["$","$4",null,{"fallback":null,"children":[["$","$L5",null,{}],["$","$L6",null,{}]]}],["$","$L7",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}]]}],{"children":["project",["$","$1","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L9",null,{"Component":"$a","searchParams":{},"params":{},"promises":["$@b","$@c"]}],"$undefined",null,["$","$Ld",null,{"children":["$Le","$Lf",null]}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","TlqW5TTi8-YRVwBvlQDkT",{"children":[["$","$L10",null,{"children":"$L11"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],["$","$L12",null,{"children":"$L13"}]]}],false]],"m":"$undefined","G":["$14","$undefined"],"s":false,"S":true}
+b:{}
+c:{}
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+e:null
+f:null
+13:[["$","title","0",{"children":"Hadisa Norozi - Personal Portfolio"}],["$","meta","1",{"name":"description","content":"Pioneering the Future of Digital Experiences"}],["$","meta","2",{"name":"generator","content":"v0.dev"}]]
