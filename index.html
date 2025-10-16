@@ -1,300 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional profile of Hadisa Norozi, showcasing expertise, portfolio, and contact information.">
-    <meta name="author" content="Hadisa Norozi">
-    <meta name="keywords" content="Hadisa Norozi, portfolio, professional profile, resume, contact">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional profile of Hadisa Norozi, showcasing expertise, portfolio, and contact information."
+    />
+    <meta name="author" content="Hadisa Norozi" />
+    <meta
+      name="keywords"
+      content="Hadisa Norozi, portfolio, professional profile, resume, contact, software engineer"
+    />
     <title>Hadisa Norozi - Professional Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-        :root {
-            --primary-color: #1e88e5;
-            --accent-color: #4caf50;
-            --text-color: #212121;
-            --background-light: rgba(255, 255, 255, 0.2);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
+      /* --- Color Variables for Dark Theme --- */
+      :root {
+        --primary-dark: #121212; /* Deep Black Background */
+        --secondary-dark: #181818; /* Card Background */
+        --accent-red: #8b0000; /* Dark Maroon/Gaming Red */
+        --accent-light: #ff4655; /* Valorant-style Bright Red/Accent */
+        --text-light: #e0e0e0; /* Light text for dark background */
+        --text-muted: #b0b0b0; /* Subtler text */
+        --shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow for contrast */
+      }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      /* --- Base Styles --- */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #eceff1, #f5f7fa);
-            overflow: auto;
-        }
+      body {
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--background-dark); /* Dark background */
+        /* Subtle dark gradient/texture */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23212121" width="100" height="100"/><path fill="rgba(255,255,255,0.05)" d="M50 0 L100 50 L50 100 L0 50 Z"/></svg>');
+        background-size: 200px 200px;
+        overflow: auto;
+        color: var(--text-light);
+      }
 
+      /* --- Background Animation Effects --- */
+
+      @keyframes backgroundShine {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
+      }
+
+      @keyframes backgroundPan {
+        0% {
+          background-size: 300% 300%;
+        }
+        50% {
+          background-size: 250% 250%;
+        }
+        100% {
+          background-size: 300% 300%;
+        }
+      }
+
+      /* --- Main Card Container --- */
+      .profile-card {
+        background-color: var(--secondary-dark);
+        width: 380px;
+        max-width: 90%;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid rgba(255, 70, 85, 0.1); /* Subtle red border */
+        animation: fadeIn 0.8s ease-in-out;
+        position: relative; /* For potential internal shining */
+        z-index: 1; /* Ensure card is above background animations */
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* --- Profile Header (Top Section) --- */
+      .profile-header {
+        background: linear-gradient(
+          135deg,
+          var(--accent-red) 0%,
+          var(--primary-dark) 100%
+        );
+        padding: 30px 20px 50px;
+        color: #fff;
+        position: relative;
+        transition: box-shadow 0.3s ease;
+        overflow: hidden; /* For header specific shine effect */
+      }
+
+      .profile-header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transform: skewX(-20deg);
+        animation: headerShine 3s infinite ease-in-out 2s; /* Delayed shine */
+        opacity: 0.6;
+      }
+
+      @keyframes headerShine {
+        0%,
+        70% {
+          left: -100%;
+        }
+        80% {
+          left: 100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      .profile-header img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 5px solid var(--accent-light);
+        object-fit: cover;
+        box-shadow: 0 0 15px rgba(255, 70, 85, 0.5);
+        transition: transform 0.3s ease;
+      }
+
+      .profile-header img:hover {
+        transform: scale(1.05) rotate(3deg);
+      }
+
+      .profile-header h1 {
+        margin: 15px 0 5px;
+        font-size: 2em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      .profile-header p {
+        margin: 0;
+        font-size: 1em;
+        color: var(--text-muted);
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+
+      /* --- Social Links (The strip below the header) --- */
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 15px 20px;
+        background-color: #1a1a1a;
+        border-bottom: 2px solid var(--primary-dark);
+        position: relative;
+        z-index: 10;
+      }
+
+      .social-links a {
+        color: var(--text-light);
+        font-size: 1.8em;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--accent-light);
+        transform: translateY(-5px) scale(1.1);
+        text-shadow: 0 0 8px var(--accent-light);
+      }
+
+      /* --- Link Buttons Section --- */
+      .links-section {
+        padding: 25px 20px;
+        background: rgba(255, 70, 85, 0.08);
+      }
+
+      .link-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 25px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--text-light);
+        font-weight: 600;
+        font-size: 1.1em;
+        letter-spacing: 0.2px;
+        opacity: 0;
+        animation: slideIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        animation-delay: calc(var(--order) * 0.1s);
+        transition: background 0.3s ease, transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative; /* For internal shine effect */
+        overflow: hidden; /* To contain the shine */
+
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border-left: 5px solid var(--accent-red);
+      }
+
+      .link-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.15); /* Light streak */
+        transform: skewX(-20deg);
+        transition: left 0.5s ease;
+        opacity: 0;
+      }
+
+      .link-item:hover::before {
+        left: 125%;
+        opacity: 1;
+        transition: left 0.5s ease;
+      }
+
+      .link-item:hover {
+        background: rgba(255, 70, 85, 0.5);
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(255, 70, 85, 0.3);
+        border-color: var(--accent-light);
+      }
+
+      .link-item span:last-child {
+        font-size: 1.2em;
+        transition: transform 0.3s ease;
+      }
+
+      .link-item:hover span:last-child {
+        transform: translateX(5px);
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Specific link color overrides (subtler in dark mode) */
+      .link-item.green {
+        background: #1e1e1e;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border-left: 5px solid var(--accent-red);
+      }
+      .link-item.green:hover {
+        background: rgba(76, 175, 80, 0.2);
+        box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+      }
+
+      .link-item.red {
+        background: #1e1e1e;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border-left: 5px solid var(--accent-red);
+      }
+      .link-item.red:hover {
+        background: rgba(30, 136, 229, 0.2);
+        box-shadow: 0 0 15px rgba(30, 136, 229, 0.3);
+      }
+
+      /* --- Contact Footer Section --- */
+      .get-in-touch {
+        /* background-color: var(--primary-dark); */
+        padding: 25px 20px;
+        border-top: 2px solid #292929;
+        border-radius: 0 0 20px 20px;
+        animation: pulse 4s infinite alternate ease-in-out;
+        position: relative; /* For pseudo-elements */
+        overflow: hidden;
+        background: rgba(255, 70, 85, 0.1);
+      }
+
+      /* Glass/Shine effect for footer */
+      .get-in-touch::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 70, 85, 0.1) 0%,
+          transparent 40%
+        );
+        opacity: 0;
+        animation: footerShine 6s infinite ease-in-out;
+      }
+
+      @keyframes footerShine {
+        0% {
+          transform: scale(0.5) rotate(0deg);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.2;
+        }
+        100% {
+          transform: scale(1.5) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          border-color: #292929;
+        }
+        100% {
+          border-color: rgba(255, 70, 85, 0.5);
+        }
+      }
+
+      .get-in-touch h3 {
+        margin: 0 0 10px;
+        font-size: 1.4em;
+        color: var(--accent-light);
+        font-weight: 700;
+      }
+
+      .get-in-touch p {
+        margin: 6px 0;
+        font-size: 0.9em;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+
+      .get-in-touch a {
+        color: var(--accent-light);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .get-in-touch a:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      /* --- Media Queries for Responsiveness --- */
+      @media (max-width: 400px) {
         .profile-card {
-            background: var(--background-light);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            width: 350px;
-            max-width: 90%;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            text-align: center;
-            animation: fadeIn 0.6s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+          border-radius: 10px;
         }
 
         .profile-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            padding: 30px 20px;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .profile-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
-            opacity: 0.5;
-            transform: rotate(45deg);
-            animation: shine 4s infinite linear;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
-        }
-
-        .profile-header:hover {
-            transform: scale(1.01);
-            box-shadow: var(--shadow);
+          padding: 25px 15px 40px;
         }
 
         .profile-header img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.9);
-            object-fit: cover;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .profile-header img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          width: 100px;
+          height: 100px;
         }
 
         .profile-header h1 {
-            margin: 15px 0 8px;
-            font-size: 1.8em;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .profile-header p {
-            margin: 0;
-            font-size: 1em;
-            color: #f5f5f5;
-            font-weight: 300;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .social-links a {
-            color: var(--text-color);
-            font-size: 1.6em;
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-4px);
-        }
-
-        .social-links a::before {
-            content: '';
-            position: absolute;
-            top: -6px;
-            left: -6px;
-            right: -6px;
-            bottom: -6px;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-            border-radius: 50%;
-            animation: socialShine 2.5s infinite linear;
-            opacity: 0;
-            z-index: -1;
-        }
-
-        .social-links a:hover::before {
-            opacity: 1;
-        }
-
-        @keyframes socialShine {
-            0% { transform: rotate(0deg) translateX(0); }
-            100% { transform: rotate(360deg) translateX(6px); }
+          font-size: 1.8em;
         }
 
         .links-section {
-            padding: 30px 25px;
+          padding: 20px 15px;
         }
 
         .link-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            font-size: 1em;
-            opacity: 0;
-            animation: slideIn 0.6s ease forwards;
-            animation-delay: calc(var(--order) * 0.15s);
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+          font-size: 1em;
+          padding: 15px 20px;
         }
-
-        .link-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateX(8px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .link-item.red { background: rgba(111, 171, 221, 0.5); }
-        .link-item.green { background: rgba(232, 245, 233, 0.5); }
-
-        .get-in-touch {
-            background: rgba(200, 230, 201, 0.3);
-            backdrop-filter: blur(12px);
-            padding: 30px 25px;
-            border-radius: 0 0 20px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            animation: bounceIn 0.6s ease-out;
-        }
-
-        @keyframes bounceIn {
-            0% { transform: scale(0.92); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .get-in-touch h3 {
-            margin: 0 0 10px;
-            font-size: 1.3em;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .get-in-touch p {
-            margin: 6px 0;
-            font-size: 0.95em;
-            color: var(--text-color);
-            line-height: 1.5;
-        }
-
-        .get-in-touch a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .get-in-touch a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        .get-in-touch:hover {
-            background: rgba(200, 230, 201, 0.4);
-            transition: background 0.3s ease;
-        }
-
-        @media (max-width: 400px) {
-            .profile-card {
-                width: 90%;
-            }
-
-            .profile-header img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .profile-header h1 {
-                font-size: 1.5em;
-            }
-
-            .profile-header p {
-                font-size: 0.9em;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="profile-card">
-        <div class="profile-header">
-            <img src="me.png" alt="Profile Picture of Hadisa Norozi">
-            <h1>Hadisa Norozi</h1>
-            <p>Herat, Afghanistan | Software Engineer | She/Her</p>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/hadisa" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/hadisa-norozi" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-            <a href="https://portfolio-gilt-xi-64.vercel.app/" target="_blank" aria-label="Personal Website"><i class="fas fa-link"></i></a>
-        </div>
-        <div class="links-section">
-            <a href="https://portfolio-gilt-xi-64.vercel.app/" class="link-item" style="--order: 1;">
-                <span>Personal Website & Portfolio</span>
-                <span>➜</span>
-            </a>
-            <a href="https://drive.google.com/file/d/1Mlod4goW1B0IpBKRfaADFHyqO0M1FZPC/view" class="link-item green" style="--order: 2;">
-                <span>Resume & Curriculum Vitae</span>
-                <span>➜</span>
-            </a>
-            <a href="https://cal.com/hadisa/" class="link-item red" style="--order: 3;">
-                <span>Schedule a 1:1 Session</span>
-                <span>➜</span>
-            </a>
-            <a href="summary.html" class="link-item" style="--order: 4;">
-                <span>Professional Summary</span>
-                <span>➜</span>
-            </a>
-        </div>
-        <div class="get-in-touch">
-            <h3>Contact Me</h3>
-            <p><a href="mailto:hadisa.norozi@gmail.com">hadisa.norozi@gmail.com</a></p>
-            <p>I respond promptly to all inquiries. Let's connect to discuss opportunities or collaborations!</p>
-        </div>
+      <div class="profile-header">
+        <img src="me.png" alt="Profile Picture of Hadisa Norozi" />
+        <h1>Hadisa Norozi</h1>
+        <p>Software Engineer, Herat, Afghanistan | She/Her</p>
+      </div>
+
+      <div class="social-links">
+        <a
+          href="https://github.com/hadisa"
+          target="_blank"
+          aria-label="GitHub Profile"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://linkedin.com/in/hadisa-norozi"
+          target="_blank"
+          aria-label="LinkedIn Profile"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://hadisa.vercel.app/"
+          target="_blank"
+          aria-label="Personal Website"
+          ><i class="fas fa-link"></i
+        ></a>
+        <a
+          href="mailto:hadisa.norozi@gmail.com"
+          target="_blank"
+          aria-label="Email Address"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
+
+      <div class="links-section">
+        <a
+          href="https://hadisa.vercel.app/"
+          class="link-item"
+          style="--order: 1"
+        >
+          <span>Personal Website & Portfolio</span>
+          <span><i class="fas fa-chevron-right"></i></span>
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1Mlod4goW1B0IpBKRfaADFHyqO0M1FZPC/view"
+          class="link-item green"
+          style="--order: 2"
+        >
+          <span>Resume & Curriculum Vitae</span>
+          <span><i class="fas fa-file-alt"></i></span>
+        </a>
+        <a
+          href="https://cal.com/hadisa/"
+          class="link-item red"
+          style="--order: 3"
+        >
+          <span>Schedule a 1:1 Session</span>
+          <span><i class="fas fa-calendar-alt"></i></span>
+        </a>
+        <a href="summary.html" class="link-item" style="--order: 4">
+          <span>Professional Summary</span>
+          <span><i class="fas fa-briefcase"></i></span>
+        </a>
+      </div>
+
+      <div class="get-in-touch">
+        <h3>Let's Connect</h3>
+        <p>
+          Email me at
+          <a href="mailto:hadisa.norozi@gmail.com">hadisa.norozi@gmail.com</a>
+        </p>
+        <p>
+          I prioritize timely responses for new opportunities and
+          collaborations!
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
